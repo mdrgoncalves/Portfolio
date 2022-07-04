@@ -483,8 +483,8 @@ footer {
     .nome {
         font-size: 5vw;
         position: absolute;
-        left: 16vmax;
-        top: 44vmax;
+        left: 26vmin;
+        top: 74vmin;
         color: var(--color-dark-purple);
         margin: 0;
     }
@@ -492,8 +492,8 @@ footer {
     .prof {
         font-size: 5vw;
         position: absolute;
-        left: 13vmax;
-        top: 49vmax;
+        left: 22vmin;
+        top: 82vmin;
         color: var(--color-light-purple);
     }
 
