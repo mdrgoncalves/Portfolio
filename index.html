@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+</head>
+<body>
+    
+    <!-- Barra de Menu -->
+    <nav id="navbar">
+        <div>
+            <img src="./img/logo.png" alt="Logo" width="15px"> 
+            <a class="logo" href="#">MDRGON</a>
+        </div>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#conhecimentos">Conhecimentos</a></li>
+            <li><a href="#headerBg">Projetos</a></li>
+            <li><a href="#curriculo">Currículo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="bvindas">
+        <div>
+            <p>Oi, meu nome é</p>
+            <h1 class="lightBlue">Michael Douglas.</h1>
+            <p>DESENVOLVEDOR WEB</p>
+        </div>
+        <div class="bvShort">
+            <p>Bem - vindos!</p>
+        </div>
+        <h1 class="bvShort nome">Michael Douglas</h1>
+        <h2 class="bvShort prof">DESENVOLVEDOR WEB</h2>
+    </header>
+
+    <!-- Sobre & Experiência -->
+    <div class="abxpGrid">
+        <div class="social">
+            <hr width="1" size="200">
+            <h2>Redes Sociais</h2>
+            <ul>
+                <li><input id="email" type="image" src="./img/email.png"></li>
+                <li><input id="linkedin" type="image" src="./img/linkdin.png"></li>
+                <li><input id="github" type="image" src="./img/github.png"></li>
+            </ul>
+            <hr width="1" size="200">
+        </div>
+        <section id="sobre" class="about hr-line textBlock">
+            <h2 class="lightPurple lineRight">Sobre Mim</h2>
+            <p>Olá! Meu nome é Michael, sou graduado em Engenharia Civil e estudante de Análise e Desenvolvimento de Sistemas. Meu interesse por desenvolvimento web começou logo quando criança através de um curso extracurricular da escola de Web Design e desde então mesclo os aprendizados de TI com os desafios impostos no dia a dia.</p>
+        </section>
+        <section id="conhecimentos" class="tech textBlock">
+            <h2 class="lightPurple lineRight">Conhecimentos</h2>
+            <p>Aqui tem umas tecnologias que venho estudando recentemente:</p>
+            <ul>
+                <li class="card">
+                    <img src="./img/html.png" alt="">
+                    <p>HTML</p>
+                </li>
+                <li class="card">
+                    <img src="./img/css.png" alt="">
+                    <p>CSS</p>
+                </li>
+                <li class="card">
+                    <img src="./img/js.png" alt="">
+                    <p>JAVASCRIPT</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Projetos -->
+    <div id="headerBg"></div>
+    <section id="projetos" class="projectGrid">
+        <h2 class="fullText lineBright ">Algumas Coisas que Eu Fiz</h2>
+        <div class="featureProject">
+            <div class="featureCard">
+                <a href="https://mdrgoncalves.github.io/ct-playablechars/" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="featureDesc">
+                <p class="whiteText">Uma pequena página descrevendo os personagens jogáveis de Chrono Trigger com a aparência de um documento técnico.</p>
+            </div>
+            <div class="featureTitle">
+                <span class="whiteText">Destaque</span>
+                <h3>CT: Personagens Jogáveis</h3>
+            </div>
+        </div>
+            
+        <div class="projects">
+            <div class="projectCard">
+                <p>EM BREVE</p>
+            </div>
+            <div class="projectCard">
+                <p>EM BREVE</p>
+            </div>
+            <div class="projectCard">
+                <p>EM BREVE</p>
+            </div>
+            <div class="projectCard">
+                <p>EM BREVE</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div id="blueLine"></div>
+    <footer>
+        <p>Desenvolvido com ❤️ por Michael Douglas</p>
+    </footer>
+    <script src="./js/mobile-navbar.js"></script>
+</body>
+</html>

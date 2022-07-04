@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* ----- GENERAL ----- */
+
+* {
+    box-sizing: border-box;
+    --color-dark-purple: #343351;
+    --color-light-purple: #4A4873;
+    --color-light-blue: #91F9F7;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* ----- NAVBAR ----- */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-dark-purple);
+    width: 100%;
+    height: 5vh;
+    position: fixed;
+    opacity: 0.95;
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 32px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+/* ----- HEADER ----- */
+
+header {
+    /*background-image: url(https://i.ibb.co/CPKbjfb/Sem-t-tulo.png);*/
+    background-image: url(./img/bgHeader.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 32vmax;
+    color: #fff;
+}
+
+header div {
+    position: absolute;
+    left: 20vmax;
+    top: 6vmax;
+}
+
+.bvShort {
+    display: none;
+}
+
+header h1 {
+    margin: 10px 0px 10px 0px;
+    font-size: 2.3vw;
+    letter-spacing: 1.5px;
+}
+
+.lightBlue {
+    color: var(--color-light-blue);
+}
+
+header p {
+    font-size: 1vw;
+}
+
+/* ----- ABOUT & EXP ----- */
+
+.abxpGrid {
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-rows: 0.8fr 1.2fr; 
+    gap: 0px 50px; 
+    grid-template-areas: 
+    "social about empty"
+    "social tech empty"
+}
+
+.social {
+    grid-area: social;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.social ul {
+    padding: 0;
+    margin: 20px 0;
+}
+
+.social li:hover {
+    animation: headShake;
+    animation-duration: 3s;
+}
+
+.social h2 {
+    display: none;
+}
+
+.social input {
+    width: 2vmax;
+}
+
+.about {
+    grid-area: about;
+}
+
+.textBlock {
+    width: 50vw;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.textBlock p {
+    padding: 30px 0;
+}
+
+.lightPurple {
+    color: var(--color-light-purple);
+}
+
+.lineRight {
+    display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.lineRight::after {
+    content: '';
+	border-top: 1px solid;
+	margin: 0 20px 0 0;
+	flex: 1 0 20px;
+	color: var(--color-light-purple);
+    margin: 0 0 0 20px;
+}
+
+.tech {
+    grid-area: tech;
+}
+
+.tech ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+    padding-top: 30px;
+}
+
+.tech li {
+    text-align: center;
+    padding: 10px;
+    animation: zoom-out 0.3s ease;
+}
+
+.tech li:hover {
+    animation: zoom-in 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom-in {
+    0% {
+    transform: scale(1, 1);
+    }
+    100% {
+    transform: scale(1.1, 1.1);
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+    transform: scale(1.1, 1.1);
+    }
+    100% {
+    transform: scale(1, 1);
+    }
+}
+
+.tech img {
+    width: 40%;
+}
+
+.card {
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.1);
+    border-radius: 0.8rem;
+}
+
+.card p {
+    padding: 0;
+}
+
+/* ----- PROJECTS ----- */
+
+#headerBg {
+    background-image: url(./img/bgProjetoV2.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    color: var(--color-light-blue);
+    height: 40vh;
+}
+
+#projetos {
+    height: 90vh; 
+    color: var(--color-light-blue);
+    background-color: var(--color-dark-purple);
+    position: relative;
+}
+
+#projetos h2 {
+    position: absolute;
+    left: 15vw;
+    top: -5vh;
+}
+
+.projectGrid {
+    display: grid; 
+    grid-template-columns: 0.45fr 2fr 0.5fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    "empty1 featureProject empty2"
+    "empty1 projects empty2";
+}
+
+.featureProject {
+    grid-area: featureProject;
+    padding: 80px 0 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.whiteText {
+    color: white;
+}
+
+.lineBright {
+    display: flex;
+	width: 70%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.lineBright::after {
+    content: '';
+	border-top: 1px solid;
+	margin: 0 20px 0 0;
+	flex: 1 0 20px;
+	color: var(--color-light-blue);
+    margin: 0 0 0 20px;
+}
+
+.featureCard {
+    background-image: url(./img/ct-pc.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.1);
+    border-radius: 0.6rem;
+    width: 500px;
+    height: 300px;
+}
+
+.featureCard a {
+    display: block;
+    height: 300px;
+}
+
+.featureCard a::before {
+    content: '';
+    background-color: var(--color-light-blue);
+    border-radius: 0.6rem;
+    opacity: 0.6;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    transition: .3s all;
+}
+
+.featureCard a:hover::before {
+    opacity: 0;
+}
+
+.featureTitle {
+    position: absolute;
+    margin-left: 490px;
+    margin-bottom: 180px;
+    text-align: right;
+}
+
+.featureTitle h3 {
+    margin: 0;
+}
+
+.featureTitle span {
+    font-size: 12px;
+}
+
+.featureDesc {
+    background-color: var(--color-light-purple);
+    width: 450px;
+    height: 100px;
+    position: relative;
+    right: 100px;
+    padding: 10px;
+    border-radius: 0.4rem;
+}
+
+.projects { 
+    grid-area: projects; 
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.projectCard {
+    background-color: var(--color-light-purple);
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.1);
+    border-radius: 0.8rem;
+    width: 270px;
+    height: 250px;
+    text-align: center;
+
+    animation: zoom-out 0.3s ease;
+}
+
+.projectCard:hover {
+    animation: zoom-in 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+.projectCard p {
+    padding-top: 105px;
+    font-size: 20px;
+}
+
+#blueLine {
+    height: 2px;
+}
+
+footer {
+    background-color: #4A4873;
+    color: #fff;
+    box-shadow: 0px -3px 0px 0px var(--color-light-blue);
+    padding: 20px;
+    text-align: center;
+}
+
+/* ----- BREAKPOINTS ----- */
+
+/* HEADER FOR PHONE AND TABLET */
+@media screen and (max-width: 899px) {
+
+    /* ----- NAVBAR ----- */
+    
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 5vh;
+        right: 0;
+        width: 80vw;
+        height: 100vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+        box-shadow: inset 0px 2px 0px 0px var(--color-light-purple);
+    }
+
+    .nav-list a {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    .mobile-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+    /* ----- HEADER ----- */
+
+    header {
+        background-image: url(./img/bgProjeto_mobile.png);
+        height: 100vw;
+    }
+
+    header div {
+        display: none;
+        position: absolute;
+        left: 30vmin;
+        top: 7vmax;
+    }
+
+    header p {
+        font-size: 5vw;
+    }
+
+    .bvShort {
+        display: block;
+        font-size: 20vmin;
+    }
+
+    .nome {
+        font-size: 5vw;
+        position: absolute;
+        left: 16vmax;
+        top: 44vmax;
+        color: var(--color-dark-purple);
+        margin: 0;
+    }
+
+    .prof {
+        font-size: 5vw;
+        position: absolute;
+        left: 13vmax;
+        top: 49vmax;
+        color: var(--color-light-purple);
+    }
+
+    header h1 {
+        margin: 10px 0px 10px 0px;
+        font-size: 2.3vw;
+        letter-spacing: 1.5px;
+    }
+
+    /* ----- ABOUT & EXP ----- */
+
+    .abxpGrid {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0.25fr 1fr 0.25fr; 
+        grid-template-areas: 
+        "about"
+        "tech"
+        "social";
+        margin: 30px 0;
+    }
+    
+    .social {
+        grid-area: social;
+        text-align: center;
+        padding-top: 0;
+        margin-top: 70px;
+    }
+    
+    hr {
+        display: none;
+    }
+
+    .social ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .social li {
+        margin: 0 15px;
+    }
+
+    .social h2 {
+        display: block;
+        padding-bottom: 10px;
+    }
+    
+    .social input {
+        width: 50px;
+    }
+    
+    .textBlock {
+        width: 100vw;
+        padding: 0 25px;
+    }
+    
+    .tech ul {
+        display: flex;
+        flex-direction: column;
+        column-gap: 2rem;
+        padding-top: 0px;
+    }
+    
+    .card {
+        margin-top: 30px;
+    }
+
+    /* ----- PROJECTS ----- */
+
+    #headerBg {
+        height: 16vmax;
+    }
+
+    #projetos {
+        height: 260vmax; 
+    }
+
+    #projetos h2 {
+        position: absolute;
+        left: 15vw;
+        top: 10vmin;
+    }
+
+    .projectGrid {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 80vmax 180vmax; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "featureProject"
+        "projects";
+    }
+
+    .featureProject {
+        grid-area: featureProject;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        padding-top: 200px;
+    }
+
+    .featureCard {
+        width: 90vw;
+        height: 36vmax;
+    }
+
+    .featureCard a {
+        display: block;
+        width: 90vw;
+        height: 36vmax;
+    }
+
+    .featureCard a::before {
+        background-color: var(--color-light-purple);
+        opacity: 0.8;
+        width: 90vw;
+        height: 36vmax;
+        border-radius: 0.6rem;
+    }
+
+    .featureCard a:hover::before {
+        opacity: 0.8;
+    }
+
+    .featureTitle {
+        display: none;
+    }
+
+    .featureDesc {
+        position: relative;
+        background: transparent;
+        top: -30vmax;
+        left: 3px;
+        width: 280px;
+        height: 40px;
+        text-align: center;
+    }
+
+    .projects { 
+        grid-area: projects; 
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 60px;
+        padding: 0;
+        align-items: center;
+    }
+
+    .projectCard {
+        width: 90vw;
+        height: 36vmax;
+        text-align: center;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .projectCard p {
+        padding-top: 15vmax;
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+
+}
+
+/* FOR TABLET PORTRAIT UP */
+@media screen and (min-width: 600px) and (max-width: 899px) { 
+    
+        /* ----- ABOUT & EXP ----- */
+    
+        .abxpGrid {
+            grid-template-columns: 1fr; 
+            grid-template-rows: 0.25fr 1fr 0.25fr; 
+            grid-template-areas: 
+            "about"
+            "tech"
+            "social";
+            margin: 30px 0;
+        }
+        
+        .social {
+            grid-area: social;
+            text-align: center;
+            padding-top: 0;
+            margin-top: 70px;
+        }
+        
+        hr {
+            display: none;
+        }
+    
+        .social ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    
+        .social li {
+            margin: 0 15px;
+        }
+    
+        .social h2 {
+            display: block;
+            padding-bottom: 10px;
+        }
+        
+        .social input {
+            width: 50px;
+        }
+        
+        .textBlock {
+            width: 100vw;
+            padding: 0 25px;
+        }
+        
+        .tech ul {
+            display: flex;
+            flex-direction: column;
+            column-gap: 2rem;
+            padding-top: 0px;
+        }
+        
+        .card {
+            margin-top: 30px;
+        }
+    
+        /* ----- PROJECTS ----- */
+    
+        #headerBg {
+            height: 16vmax;
+        }
+    
+        #projetos {
+            height: 245vmax; 
+        }
+    
+        #projetos h2 {
+            position: absolute;
+            left: 15vw;
+            top: 10vmin;
+        }
+    
+        .projectGrid {
+            display: grid; 
+            grid-template-columns: 1fr; 
+            grid-template-rows: 80vmax 160vmax; 
+            gap: 0px 0px; 
+            grid-template-areas: 
+            "featureProject"
+            "projects";
+        }
+    
+        .featureProject {
+            grid-area: featureProject;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+            padding-top: 200px;
+        }
+    
+        .featureCard {
+            width: 90vw;
+            height: 36vmax;
+        }
+    
+        .featureCard a {
+            display: block;
+            width: 90vw;
+            height: 36vmax;
+        }
+    
+        .featureCard a::before {
+            background-color: var(--color-light-purple);
+            opacity: 0.8;
+            width: 90vw;
+            height: 36vmax;
+            border-radius: 0.6rem;
+        }
+    
+        .featureCard a:hover::before {
+            opacity: 0.8;
+        }
+    
+        .featureTitle {
+            display: none;
+        }
+    
+        .featureDesc {
+            position: relative;
+            background: transparent;
+            top: -26vmax;
+            left: 3px;
+            width: 300px;
+            height: 40px;
+            text-align: center;
+        }
+    
+        .projects { 
+            grid-area: projects; 
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-bottom: 60px;
+            padding: 0;
+            align-items: center;
+        }
+    
+        .projectCard {
+            width: 90vw;
+            height: 36vmax;
+            text-align: center;
+            margin-top: 30px;
+            padding: 0;
+        }
+    
+        .projectCard p {
+            padding-top: 15vmax;
+            font-size: 20px;
+        }
+    
+        footer {
+            font-size: 13px;
+        }
+    
+}
+
+/* FOR TABLET LANDSCAPE */
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+
+    /* ----- PROJECTS ----- */
+
+    .projectGrid {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 0.7fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "featureProject"
+        "projects";
+    }
+
+    #projetos {
+        height: 105vh;
+    }
+
+    .featureProject {
+        padding-bottom: 70px;
+        padding-left: 70px;
+    }
+
+    .projects { 
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .projectCard {
+        width: 22vw;
+        height: 30vh;
+    }
+
+    .projectCard p {
+        padding-top: 95px;
+        font-size: 20px;
+    }
+    
+}
+
+/* FOR DESKTOP ONLY */
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+    
+    /* ----- PROJECTS ----- */
+
+    .projectGrid {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "featureProject"
+        "projects";
+    }
+
+    #projetos {
+        height: 65vmax;
+    }
+
+    .featureProject {
+        padding-bottom: 70px;
+    }
+
+    .projectCard {
+        width: 21vw;
+        height: 20vmax;
+    }
+
+    .projectCard p {
+        padding-top: 95px;
+        font-size: 20px;
+    }
+    
+}
+
+
+/* FOR BIG DESKTOP UP 
+@media screen and (min-width: 1800px) { 
+
+    /* ----- HEADER ----- 
+    header {
+        height: 50vh;
+    }
+
+    /* ----- PROJECTS ----- 
+    #projetos {
+        height: 90vh;
+    }
+
+    .featureProject {
+        padding-bottom: 80px;
+    }
+
+    .projectCard {
+        width: 270px;
+        height: 250px;
+    }
+
+    .projectCard p {
+        padding-top: 105px;
+    font-size: 20px;
+    }
+    
+}
+*/
